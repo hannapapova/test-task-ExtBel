@@ -9,8 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".SignUpFragment"
-        android:paddingBottom="31dp">
+        android:paddingBottom="31dp"
+        tools:context=".SignUpFragment">
 
         <TextView
             android:id="@+id/tv_sign_up"
@@ -46,6 +46,9 @@
             android:text="@string/sign_up"
             android:textColor="@color/white"
             android:textSize="14sp"
+            android:elevation="0dp"
+            android:translationZ="0dp"
+            android:stateListAnimator="@null"
             app:layout_constraintTop_toBottomOf="@id/material_layout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,7 +61,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_sign_up">
 
-            <!--            TODO: Add Drop Shadow for buttons-->
             <TextView
                 android:id="@+id/tv_login_with_social"
                 android:layout_width="match_parent"
@@ -75,10 +77,14 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rectangle_social"
                 android:drawableStart="@drawable/google_logo"
+                android:elevation="4dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="20dp"
+                android:translationZ="4dp"
                 app:layout_constraintStart_toStartOf="parent"
+                android:stateListAnimator="@null"
                 app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
+
 
             <Button
                 android:id="@+id/btn_login_with_facebook"
@@ -88,8 +94,11 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rectangle_social"
                 android:drawableStart="@drawable/facebook_logo"
+                android:elevation="4dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="20dp"
+                android:translationZ="4dp"
+                android:stateListAnimator="@null"
                 app:layout_constraintStart_toEndOf="@id/btn_login_with_google"
                 app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
 
@@ -101,8 +110,11 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rectangle_social"
                 android:drawableStart="@drawable/apple_logo"
+                android:elevation="4dp"
                 android:paddingStart="15dp"
                 android:paddingEnd="20dp"
+                android:translationZ="4dp"
+                android:stateListAnimator="@null"
                 app:layout_constraintStart_toEndOf="@id/btn_login_with_facebook"
                 app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
 
@@ -111,8 +123,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="21dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_login_with_social">
@@ -121,14 +133,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/don_t_have_an_account"
-                android:textAppearance="@style/dont_have_account"/>
+                android:textAppearance="@style/dont_have_account" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
-                android:textStyle="bold"
                 android:textAppearance="@style/dont_have_account"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout_login_with_social" />

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TestTaskExtBel</string>
-    <string name="marier_logo">Marrier logo</string>
+    <string name="marier_logo">Marier logo</string>
     <string name="go_back_button">Go back button</string>
     <string name="sign_up">Sign Up</string>
     <string name="login_with_social">Login with Social</string>
-    <string name="don_t_have_an_account">Don\'t have an account? </string>
+    <string name="don_t_have_an_account">Don\'t have an account?\u0020</string>
 </resources>
