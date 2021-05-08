@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TestTaskExtBel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.TestTaskExtBel" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">#3E58B8 </item>
@@ -12,5 +12,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="sign_up">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.07</item>
+        <item name="android:textColor">#161616</item>
     </style>
 </resources>
