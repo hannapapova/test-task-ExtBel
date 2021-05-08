@@ -16,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/marier_logo" />
 
     <ImageView
         android:id="@+id/chevron_left"
@@ -26,7 +27,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="25dp"/>
+        android:layout_marginStart="25dp"
+        android:contentDescription="@string/go_back_button" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
