@@ -73,6 +73,22 @@ class SignUpFragment : Fragment() {
                     .show()
             }
         }
+
+        chevron_left.setOnClickListener {
+            Toast.makeText(requireContext(), "Navigate back", Toast.LENGTH_SHORT).show()
+        }
+
+        btn_login_with_google.setOnClickListener {
+            Toast.makeText(requireContext(), "Login w/Google", Toast.LENGTH_SHORT).show()
+        }
+
+        btn_login_with_facebook.setOnClickListener {
+            Toast.makeText(requireContext(), "Login w/Facebook", Toast.LENGTH_SHORT).show()
+        }
+
+        btn_login_with_apple.setOnClickListener {
+            Toast.makeText(requireContext(), "Login w/Apple", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun isEmailValid(email: String): Boolean {
