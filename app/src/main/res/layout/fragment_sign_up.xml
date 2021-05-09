@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/phone_number"
                 android:textAppearance="@style/input_title_style" />
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/password"
                 android:textAppearance="@style/input_title_style" />
@@ -113,7 +113,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/password_again"
                 android:textAppearance="@style/input_title_style" />
@@ -125,7 +125,8 @@
                 android:layout_height="wrap_content"
                 app:endIconDrawable="@drawable/custom_password_toggle"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@null">
+                app:endIconTint="@null"
+                app:errorIconDrawable="@null">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password_again"
@@ -187,7 +188,6 @@
                 android:translationZ="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
-
 
             <Button
                 android:id="@+id/btn_login_with_facebook"
