@@ -42,6 +42,9 @@
         <item name="boxStrokeColor">@color/black</item>
         <item name="boxStrokeWidth">2dp</item>
         <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/design_default_color_error</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/custom_error</item>
     </style>
 
     <style name="input_edit_text_style" parent="sign_up">
@@ -53,5 +56,10 @@
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">0.02</item>
         <item name="android:textColor">#110F24</item>
+    </style>
+
+    <style name="custom_error" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/design_default_color_error</item>
     </style>
 </resources>

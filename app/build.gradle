@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -46,5 +47,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // AndroidX Fragments library (Kotlin)
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
-
+    // Mask for EditText
+    implementation 'com.redmadrobot:input-mask-android:6.0.0'
 }

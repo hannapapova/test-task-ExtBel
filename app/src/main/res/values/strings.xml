@@ -9,4 +9,5 @@
     <string name="phone_number">Phone Number</string>
     <string name="password">Password</string>
     <string name="password_again">Password Again</string>
+    <string name="phone_number_example">+375 00 000-00-00</string>
 </resources>
