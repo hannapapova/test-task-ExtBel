@@ -71,15 +71,6 @@ class SignUpFragment : Fragment() {
             ) {
                 Toast.makeText(requireContext(), "Successfully signed up", Toast.LENGTH_SHORT)
                     .show()
-            } else {
-                val str = """
-                    Email: ${isEmailValid(et_email.text.toString())}
-                    Phone: ${isPhoneNumberValid(et_phone_number.text.toString())}
-                    Password: ${isPasswordValid(et_password.text.toString())}
-                    Passwords matching: ${arePasswordsMatching(et_password.text.toString(), et_password_again.text.toString())}
-                          """.trim()
-                Toast.makeText(requireContext(), str, Toast.LENGTH_SHORT)
-                    .show()
             }
         }
     }
