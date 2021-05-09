@@ -24,16 +24,99 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--    TODO: Create material design input fields-->
         <LinearLayout
             android:id="@+id/material_layout"
             android:layout_width="match_parent"
-            android:layout_height="384dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="16dp"
-            android:background="@color/black"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/tv_sign_up" />
+            android:orientation="vertical"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_mail"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="@style/input_title_style"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/e_mail"
+                    style="@style/input_edit_text_style"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    TODO: Create mask for phone-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_number"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="32dp"
+                android:textAppearance="@style/input_title_style"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number"
+                    style="@style/input_edit_text_style"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    TODO: Create password eye and validation-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="32dp"
+                android:textAppearance="@style/input_title_style"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    style="@style/input_edit_text_style"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    TODO: Create password eye-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_again"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="32dp"
+                android:textAppearance="@style/input_title_style"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_again"
+                    style="@style/input_edit_text_style"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_sign_up"
