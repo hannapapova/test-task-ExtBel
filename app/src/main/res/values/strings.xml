@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">TestTaskExtBel</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="marier_logo">Marier logo</string>
+    <string name="go_back_button">Go back button</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_with_social">Login with Social</string>
+    <string name="don_t_have_an_account">Don\'t have an account?\u0020</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="password_again">Password Again</string>
+    <string name="phone_number_example">+375 00 000–00–00</string>
+    <string name="password_must_contain">Password must contain at least 8 characters and at least 1 digit</string>
+    <string name="incorrect_email">Incorrect E-mail</string>
+    <string name="incorrect_phone">Incorrect phone number"</string>
+    <string name="passwords_aren_t_matching">Passwords aren\'t matching</string>
+    <string name="successfully_signed_up">Successfully signed up"</string>
+    <string name="navigate_back">Navigate back</string>
+    <string name="login_w_google">Login w/Google</string>
+    <string name="login_w_facebook">Login w/Facebook</string>
+    <string name="login_w_apple">Login w/Apple</string>
 </resources>

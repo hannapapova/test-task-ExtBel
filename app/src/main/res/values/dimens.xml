@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_title_text_size">20sp</dimen>
+    <dimen name="main_title_letter_spacing">0.07</dimen>
+    <dimen name="main_title_alpha">0.85</dimen>
+    <dimen name="secondary_title_text_size">12sp</dimen>
+    <dimen name="user_input_text_size">14sp</dimen>
+    <dimen name="secondary_title_letter_spacing">0.01</dimen>
+    <dimen name="user_input_layout_radius">50dp</dimen>
+    <dimen name="user_input_layout_stroke_width">2dp</dimen>
+    <dimen name="user_input_layout_title_letter_spacing">0.02</dimen>
+    <dimen name="sign_up_top_elements_margin_top">60dp</dimen>
+    <dimen name="sign_up_horizontal_margin">25dp</dimen>
+    <dimen name="sign_up_content_view_margin_top">100dp</dimen>
+    <dimen name="sign_up_content_view_padding_bottom">31dp</dimen>
+    <dimen name="sign_up_main_elements_margin_top">16dp</dimen>
+    <dimen name="user_input_layout_title_margin_bottom">8dp</dimen>
+    <dimen name="user_input_layout_title_margin_top">16dp</dimen>
+    <dimen name="sign_up_main_button_height">55dp</dimen>
+    <dimen name="sign_up_main_button_margin_top">24dp</dimen>
+    <dimen name="sign_up_main_button_elevation">0dp</dimen>
+    <dimen name="sign_up_main_button_translationZ">0dp</dimen>
+    <dimen name="layout_login_with_social_margin_top">30dp</dimen>
+    <dimen name="login_with_social_button_elevation">4dp</dimen>
+    <dimen name="login_with_social_button_translationZ">4dp</dimen>
+    <dimen name="login_with_social_button_padding_start">15dp</dimen>
+    <dimen name="login_with_social_button_padding_end">20dp</dimen>
+    <dimen name="dont_have_account_margin_top">21dp</dimen>
+</resources>
