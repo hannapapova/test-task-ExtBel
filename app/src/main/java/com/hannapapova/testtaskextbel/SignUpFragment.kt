@@ -27,7 +27,22 @@ class SignUpFragment : Fragment() {
 
         addMaskForEditText(et_phone_number, "+375 [00] [000]-[00]-[00]")
         //region Set TextWatchers
-        setTextWatchers()
+        et_password.doOnTextChanged { text, start, before, count ->
+            input_layout_password.error =
+                if (!isPasswordValid(et_password)) getString(R.string.password_must_contain) else null
+        }
+
+        et_email.setOnFocusChangeListener { v, hasFocus ->
+            input_layout_email.error = null
+        }
+
+        et_phone_number.setOnFocusChangeListener { v, hasFocus ->
+            input_layout_phone_number.error = null
+        }
+
+        et_password_again.setOnFocusChangeListener { v, hasFocus ->
+            input_layout_password_again.error = null
+        }
         //endregion
 
         btn_sign_up.setOnClickListener {
@@ -67,25 +82,6 @@ class SignUpFragment : Fragment() {
             showShortToast(context, getString(R.string.login_w_apple))
         }
         //endregion
-    }
-
-    private fun setTextWatchers() {
-        et_password.doOnTextChanged { text, start, before, count ->
-            input_layout_password.error =
-                if (!isPasswordValid(et_password)) getString(R.string.password_must_contain) else null
-        }
-
-        et_email.setOnFocusChangeListener { v, hasFocus ->
-            input_layout_email.error = null
-        }
-
-        et_phone_number.setOnFocusChangeListener { v, hasFocus ->
-            input_layout_phone_number.error = null
-        }
-
-        et_password_again.setOnFocusChangeListener { v, hasFocus ->
-            input_layout_password_again.error = null
-        }
     }
 
     private fun noErrorsLocated() =
