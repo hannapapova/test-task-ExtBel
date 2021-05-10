@@ -26,7 +26,9 @@ class SignUpFragment : Fragment() {
         val context = requireContext()
 
         addMaskForEditText(et_phone_number, "+375 [00] [000]-[00]-[00]")
+        //region Set TextWatchers
         setTextWatchers()
+        //endregion
 
         btn_sign_up.setOnClickListener {
             input_layout_email.error =
@@ -67,28 +69,28 @@ class SignUpFragment : Fragment() {
         //endregion
     }
 
-    private fun noErrorsLocated() =
-        input_layout_email.error == null && input_layout_phone_number.error == null &&
-                input_layout_password.error == null && input_layout_password_again.error == null
-
     private fun setTextWatchers() {
         et_password.doOnTextChanged { text, start, before, count ->
             input_layout_password.error =
                 if (!isPasswordValid(et_password)) getString(R.string.password_must_contain) else null
         }
 
-        et_email.setOnClickListener {
+        et_email.setOnFocusChangeListener { v, hasFocus ->
             input_layout_email.error = null
         }
 
-        et_phone_number.setOnClickListener {
+        et_phone_number.setOnFocusChangeListener { v, hasFocus ->
             input_layout_phone_number.error = null
         }
 
-        et_password_again.setOnClickListener {
+        et_password_again.setOnFocusChangeListener { v, hasFocus ->
             input_layout_password_again.error = null
         }
     }
+
+    private fun noErrorsLocated() =
+        input_layout_email.error == null && input_layout_phone_number.error == null &&
+                input_layout_password.error == null && input_layout_password_again.error == null
 
     private fun addMaskForEditText(editText: EditText, mask: String) {
         val listener = MaskedTextChangedListener(mask, editText)
