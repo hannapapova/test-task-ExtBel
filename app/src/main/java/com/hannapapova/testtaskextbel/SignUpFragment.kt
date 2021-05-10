@@ -5,7 +5,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.redmadrobot.inputmask.MaskedTextChangedListener
@@ -17,93 +17,96 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listener = MaskedTextChangedListener("+375 [00] [000]-[00]-[00]", et_phone_number)
-        et_phone_number.addTextChangedListener(listener)
-        et_phone_number.onFocusChangeListener = listener
+        val context = requireContext()
 
-        et_password.doOnTextChanged { text, start, before, count ->
-            input_layout_password.error =
-                if (!isPasswordValid(text.toString())) "Password must contain at least 8 characters and at least 1 digit"
-                else null
-        }
-
-        et_email.doOnTextChanged { text, start, before, count ->
-            input_layout_email.error = null
-        }
-
-        et_phone_number.doOnTextChanged { text, start, before, count ->
-            input_layout_phone_number.error = null
-        }
-
-        et_password_again.doOnTextChanged { text, start, before, count ->
-            input_layout_password_again.error = null
-        }
+        addMaskForEditText(et_phone_number, "+375 [00] [000]-[00]-[00]")
+        setTextWatchers()
 
         btn_sign_up.setOnClickListener {
             input_layout_email.error =
-                if (!isEmailValid(et_email.text.toString().trim())) "Incorrect E-mail" else null
+                if (!isEmailValid(et_email)) getString(R.string.incorrect_email) else null
 
             input_layout_phone_number.error =
-                if (!isPhoneNumberValid(et_phone_number.text.toString())) "Incorrect phone number" else null
+                if (!isPhoneNumberValid(et_phone_number)) getString(R.string.incorrect_phone) else null
 
             input_layout_password.error =
-                if (!isPasswordValid(et_password.text.toString())) "Password must contain at least 8 characters and at least 1 digit"
+                if (!isPasswordValid(et_password)) getString(R.string.password_must_contain)
                 else null
 
             input_layout_password_again.error =
-                if (!arePasswordsMatching(
-                        et_password.text.toString(),
-                        et_password_again.text.toString()
-                    )
-                ) "Passwords aren't matching" else null
+                if (!arePasswordsMatching(et_password, et_password_again))
+                    getString(R.string.passwords_aren_t_matching) else null
 
-            if (isEmailValid(et_email.text.toString()) &&
-                isPhoneNumberValid(et_phone_number.text.toString()) &&
-                isPasswordValid(et_password.text.toString()) &&
-                arePasswordsMatching(et_password.text.toString(), et_password_again.text.toString())
-            ) {
-                Toast.makeText(requireContext(), "Successfully signed up", Toast.LENGTH_SHORT)
-                    .show()
+            if (noErrorsLocated()) {
+                showShortToast(context, getString(R.string.successfully_signed_up))
             }
         }
 
+        //region Tiny OnClickListeners
         chevron_left.setOnClickListener {
-            Toast.makeText(requireContext(), "Navigate back", Toast.LENGTH_SHORT).show()
+            showShortToast(context, getString(R.string.navigate_back))
         }
 
         btn_login_with_google.setOnClickListener {
-            Toast.makeText(requireContext(), "Login w/Google", Toast.LENGTH_SHORT).show()
+            showShortToast(context, getString(R.string.login_w_google))
         }
 
         btn_login_with_facebook.setOnClickListener {
-            Toast.makeText(requireContext(), "Login w/Facebook", Toast.LENGTH_SHORT).show()
+            showShortToast(context, getString(R.string.login_w_facebook))
         }
 
         btn_login_with_apple.setOnClickListener {
-            Toast.makeText(requireContext(), "Login w/Apple", Toast.LENGTH_SHORT).show()
+            showShortToast(context, getString(R.string.login_w_apple))
+        }
+        //endregion
+    }
+
+    private fun noErrorsLocated() =
+        input_layout_email.error == null && input_layout_phone_number.error == null &&
+                input_layout_password.error == null && input_layout_password_again.error == null
+
+    private fun setTextWatchers() {
+        et_password.doOnTextChanged { text, start, before, count ->
+            input_layout_password.error =
+                if (!isPasswordValid(et_password)) getString(R.string.password_must_contain) else null
+        }
+
+        et_email.setOnClickListener {
+            input_layout_email.error = null
+        }
+
+        et_phone_number.setOnClickListener {
+            input_layout_phone_number.error = null
+        }
+
+        et_password_again.setOnClickListener {
+            input_layout_password_again.error = null
         }
     }
 
-    private fun isEmailValid(email: String): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    private fun addMaskForEditText(editText: EditText, mask: String) {
+        val listener = MaskedTextChangedListener(mask, editText)
+        editText.addTextChangedListener(listener)
+        editText.onFocusChangeListener = listener
     }
 
-    private fun isPhoneNumberValid(phoneNumber: String): Boolean {
-        return phoneNumber.length == 17
-    }
+    private fun isEmailValid(editTextEmail: EditText) =
+        Patterns.EMAIL_ADDRESS.matcher(editTextEmail.text.toString().trim()).matches()
 
-    private fun isPasswordValid(password: String): Boolean {
+    private fun isPhoneNumberValid(editTextPhoneNumber: EditText) =
+        editTextPhoneNumber.text.toString().length == 17
+
+    private fun isPasswordValid(editTextPassword: EditText): Boolean {
+        val password = editTextPassword.text.toString()
         return password.length >= 8 && password.contains(Regex("\\d")) && password.isNotEmpty()
     }
 
-    private fun arePasswordsMatching(password: String, passwordAgain: String): Boolean {
-        return password == passwordAgain
-    }
+    private fun arePasswordsMatching(editTextPassword: EditText, editTextPasswordAgain: EditText) =
+        editTextPassword.text.toString() == editTextPasswordAgain.text.toString()
 }

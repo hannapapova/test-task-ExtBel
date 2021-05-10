@@ -9,5 +9,14 @@
     <string name="phone_number">Phone Number</string>
     <string name="password">Password</string>
     <string name="password_again">Password Again</string>
-    <string name="phone_number_example">+375 00 000-00-00</string>
+    <string name="phone_number_example">+375 00 000–00–00</string>
+    <string name="password_must_contain">Password must contain at least 8 characters and at least 1 digit</string>
+    <string name="incorrect_email">Incorrect E-mail</string>
+    <string name="incorrect_phone">Incorrect phone number"</string>
+    <string name="passwords_aren_t_matching">Passwords aren\'t matching</string>
+    <string name="successfully_signed_up">Successfully signed up"</string>
+    <string name="navigate_back">Navigate back</string>
+    <string name="login_w_google">Login w/Google</string>
+    <string name="login_w_facebook">Login w/Facebook</string>
+    <string name="login_w_apple">Login w/Apple</string>
 </resources>

@@ -12,54 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-    </style>
-
-    <style name="sign_up">
-        <item name="android:textSize">20sp</item>
-        <item name="android:letterSpacing">0.07</item>
-        <item name="android:textColor">#161616</item>
-    </style>
-
-    <style name="login_with_">
-        <item name="android:textSize">12sp</item>
-        <item name="android:letterSpacing">0.01</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="dont_have_account" parent="login_with_">
-        <item name="android:textSize">12sp</item>
-        <item name="android:letterSpacing">0.01</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="input_layout_style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">@color/white</item>
-        <item name="boxCornerRadiusBottomEnd">50dp</item>
-        <item name="boxCornerRadiusBottomStart">50dp</item>
-        <item name="boxCornerRadiusTopEnd">50dp</item>
-        <item name="boxCornerRadiusTopStart">50dp</item>
-        <item name="hintEnabled">false</item>
-        <item name="boxStrokeColor">@color/black</item>
-        <item name="boxStrokeWidth">2dp</item>
-        <item name="boxStrokeWidthFocused">2dp</item>
-        <item name="boxStrokeErrorColor">@color/design_default_color_error</item>
-        <item name="errorEnabled">true</item>
-        <item name="errorTextAppearance">@style/custom_error</item>
-    </style>
-
-    <style name="input_edit_text_style" parent="sign_up">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColorHint">#161616</item>
-    </style>
-
-    <style name="input_title_style">
-        <item name="android:textSize">12sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:textColor">#110F24</item>
-    </style>
-
-    <style name="custom_error" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/design_default_color_error</item>
+        <!-- Overscroll color. -->
+        <item name="android:colorEdgeEffect">?attr/colorPrimaryVariant</item>
     </style>
 </resources>

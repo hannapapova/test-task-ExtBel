@@ -8,4 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="mtrl_textinput_default_box_stroke_color" override="true">#E6E6E6</color>
+    <color name="input_text_color">#161616</color>
+    <color name="input_title_text_color">#110F24</color>
+    <color name="clear">#00000000</color>
+    <color name="first_type_bubble_background">@color/white</color>
+    <color name="background_blue">#6CB0FE</color>
+    <color name="second_type_bubble_background">#D85143</color>
+    <color name="background_opacity">@color/black</color>
+    <color name="background_lower_part">#D8D8D8</color>
+    <color name="facebook_blue">#3b5999</color>
+    <color name="google_red">#f14336</color>
+    <color name="google_yellow">#fbbb00</color>
+    <color name="google_blue">#518EF8</color>
+    <color name="google_green">#28b446</color>
+    <color name="login_with_social_button_pressed">#DADADA</color>
+    <color name="sign_up_button">#00CBFF</color>
+    <color name="sign_up_button_pressed">#006E9F</color>
+    <color name="cursor_color">#3E58B8</color>
 </resources>

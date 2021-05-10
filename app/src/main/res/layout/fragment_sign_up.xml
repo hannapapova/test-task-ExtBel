@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000">
+    android:background="@color/clear">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/sign_up_top_elements_margin_top"
         android:background="@drawable/logotype"
         android:contentDescription="@string/marier_logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
         android:id="@+id/chevron_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="@dimen/sign_up_horizontal_margin"
+        android:layout_marginTop="@dimen/sign_up_top_elements_margin_top"
         android:background="@drawable/chevron_left"
         android:clickable="true"
         android:contentDescription="@string/go_back_button"
@@ -34,7 +34,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/sign_up_content_view_margin_top"
         android:background="@drawable/popup_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo">
@@ -42,17 +42,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="31dp"
+            android:paddingBottom="@dimen/sign_up_content_view_padding_bottom"
             tools:context=".SignUpFragment">
 
             <TextView
                 android:id="@+id/tv_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:alpha="0.85"
+                android:layout_marginTop="@dimen/sign_up_main_elements_margin_top"
                 android:text="@string/sign_up"
-                android:textAppearance="@style/sign_up"
+                android:textAppearance="@style/main_title_text_appearance"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,8 +60,8 @@
                 android:id="@+id/material_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="@dimen/sign_up_horizontal_margin"
+                android:layout_marginTop="@dimen/sign_up_main_elements_margin_top"
                 android:background="@color/white"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -72,19 +71,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="@dimen/user_input_layout_title_margin_bottom"
                     android:text="@string/e_mail"
-                    android:textAppearance="@style/input_title_style" />
+                    android:textAppearance="@style/input_title_text_appearance" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_email"
-                    style="@style/input_layout_style"
+                    style="@style/input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email"
-                        style="@style/input_edit_text_style"
+                        style="@style/input_edit_text_text_appearance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/e_mail"
@@ -94,20 +93,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/user_input_layout_title_margin_top"
+                    android:layout_marginBottom="@dimen/user_input_layout_title_margin_bottom"
                     android:text="@string/phone_number"
-                    android:textAppearance="@style/input_title_style" />
+                    android:textAppearance="@style/input_title_text_appearance" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_phone_number"
-                    style="@style/input_layout_style"
+                    style="@style/input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_phone_number"
-                        style="@style/input_edit_text_style"
+                        style="@style/input_edit_text_text_appearance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789+-() "
@@ -119,24 +118,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/user_input_layout_title_margin_top"
+                    android:layout_marginBottom="@dimen/user_input_layout_title_margin_bottom"
                     android:text="@string/password"
-                    android:textAppearance="@style/input_title_style" />
+                    android:textAppearance="@style/input_title_text_appearance" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_password"
-                    style="@style/input_layout_style"
+                    style="@style/input_layout_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:endIconDrawable="@drawable/custom_password_toggle"
-                    app:endIconMode="password_toggle"
-                    app:endIconTint="@null"
-                    app:errorIconDrawable="@null">
+                    android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
-                        style="@style/input_edit_text_style"
+                        style="@style/input_edit_text_text_appearance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
@@ -146,24 +141,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/user_input_layout_title_margin_top"
+                    android:layout_marginBottom="@dimen/user_input_layout_title_margin_bottom"
                     android:text="@string/password_again"
-                    android:textAppearance="@style/input_title_style" />
+                    android:textAppearance="@style/input_title_text_appearance" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_password_again"
-                    style="@style/input_layout_style"
+                    style="@style/input_layout_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:endIconDrawable="@drawable/custom_password_toggle"
-                    app:endIconMode="password_toggle"
-                    app:endIconTint="@null"
-                    app:errorIconDrawable="@null">
+                    android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password_again"
-                        style="@style/input_edit_text_style"
+                        style="@style/input_edit_text_text_appearance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password_again"
@@ -174,25 +165,21 @@
 
             <Button
                 android:id="@+id/btn_sign_up"
+                style="@style/sign_up_main_button"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="25dp"
+                android:layout_height="@dimen/sign_up_main_button_height"
+                android:layout_marginHorizontal="@dimen/sign_up_horizontal_margin"
+                android:layout_marginTop="@dimen/sign_up_main_button_margin_top"
                 android:background="@drawable/sign_up_button"
-                android:elevation="0dp"
-                android:lineSpacingExtra="0sp"
-                android:stateListAnimator="@null"
                 android:text="@string/sign_up"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:translationZ="0dp"
+                android:textAppearance="@style/sign_up_main_button_text_appearance"
                 app:layout_constraintTop_toBottomOf="@id/material_layout" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_login_with_social"
-                android:layout_width="225dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/layout_login_with_social_margin_top"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -202,55 +189,50 @@
                     android:id="@+id/tv_login_with_social"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:text="@string/login_with_social"
-                    android:textAppearance="@style/login_with_"
+                    android:textAppearance="@style/login_with_social_text_appearance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btn_login_with_google"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_marginTop="24dp"
+                    style="@style/login_with_social_button"
+                    android:layout_width="@dimen/sign_up_main_button_height"
+                    android:layout_height="@dimen/sign_up_main_button_height"
+                    android:layout_marginTop="@dimen/sign_up_main_button_margin_top"
                     android:background="@drawable/rectangle_social"
                     android:drawableStart="@drawable/google_logo"
-                    android:elevation="4dp"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="20dp"
-                    android:stateListAnimator="@null"
-                    android:translationZ="4dp"
+                    android:paddingStart="@dimen/login_with_social_button_padding_start"
+                    android:paddingEnd="@dimen/login_with_social_button_padding_end"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
 
                 <Button
                     android:id="@+id/btn_login_with_facebook"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="24dp"
+                    style="@style/login_with_social_button"
+                    android:layout_width="@dimen/sign_up_main_button_height"
+                    android:layout_height="@dimen/sign_up_main_button_height"
+                    android:layout_marginStart="@dimen/sign_up_main_button_margin_top"
+                    android:layout_marginTop="@dimen/sign_up_main_button_margin_top"
                     android:background="@drawable/rectangle_social"
                     android:drawableStart="@drawable/facebook_logo"
-                    android:elevation="4dp"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="20dp"
-                    android:stateListAnimator="@null"
-                    android:translationZ="4dp"
+                    android:paddingStart="@dimen/login_with_social_button_padding_start"
+                    android:paddingEnd="@dimen/login_with_social_button_padding_end"
                     app:layout_constraintStart_toEndOf="@id/btn_login_with_google"
                     app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
 
                 <Button
                     android:id="@+id/btn_login_with_apple"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="24dp"
+                    style="@style/login_with_social_button"
+                    android:layout_width="@dimen/sign_up_main_button_height"
+                    android:layout_height="@dimen/sign_up_main_button_height"
+                    android:layout_marginStart="@dimen/sign_up_main_button_margin_top"
+                    android:layout_marginTop="@dimen/sign_up_main_button_margin_top"
                     android:background="@drawable/rectangle_social"
                     android:drawableStart="@drawable/apple_logo"
-                    android:elevation="4dp"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="20dp"
-                    android:stateListAnimator="@null"
-                    android:translationZ="4dp"
+                    android:paddingStart="@dimen/login_with_social_button_padding_start"
+                    android:paddingEnd="@dimen/login_with_social_button_padding_end"
                     app:layout_constraintStart_toEndOf="@id/btn_login_with_facebook"
                     app:layout_constraintTop_toBottomOf="@id/tv_login_with_social" />
 
@@ -259,7 +241,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
+                android:layout_marginTop="@dimen/dont_have_account_margin_top"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -269,13 +251,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/don_t_have_an_account"
-                    android:textAppearance="@style/dont_have_account" />
+                    android:textAppearance="@style/dont_have_account_text_appearance" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sign_up"
-                    android:textAppearance="@style/dont_have_account"
+                    android:textAppearance="@style/dont_have_account_text_appearance"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
